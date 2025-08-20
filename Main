@@ -1,0 +1,42 @@
+# Define the URL of the file you want to download
+$csv = "https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/data.csv"
+# Define the path to the temporary directory
+$tempPath = [System.IO.Path]::GetTempPath()
+# Define the full path where the file will be saved
+$filePath = Join-Path -Path $tempPath -ChildPath "data.csv"
+
+#region Setup
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Bypass -Force
+try {
+    Install-PackageProvider -Name NuGet -Force 
+    Write-Host "NuGet package provider installed successfully."
+} catch {
+    Write-Host "Failed to install NuGet package provider: $_"
+}
+Set-Location $PSScriptRoot
+Install-Module PSScriptMenuGui -Scope CurrentUser -Force
+
+# Download the file
+Invoke-WebRequest -Uri $csv -OutFile $filePath
+
+try {
+    Import-Module PSScriptMenuGui -ErrorAction Stop
+}
+catch {
+    Write-Warning $_
+    Write-Verbose 'Attempting to import from parent directory...' -Verbose
+    Import-Module '..\'
+}
+#endregion
+
+$params = @{
+    csvPath = $filePath
+    windowTitle = 'PC MAC DOCTORS TOOLKIT'
+    buttonForegroundColor = 'Azure'
+    buttonBackgroundColor = '#C00077'
+    hideConsole = $true
+    Verbose = $true
+}
+Show-ScriptMenuGui @params
+
+Remove-Module PSScriptMenuGui -ErrorAction SilentlyContinue -Force
