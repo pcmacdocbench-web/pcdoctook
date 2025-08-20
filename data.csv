@@ -1,0 +1,10 @@
+Section,Method,Command,Arguments,Name,Description
+Windows 11 Bypass,powershell_inline,"iwr -useb ""https://pastebin.com/raw/gK47Yy2K"" | iex",,Apply Windows 11 24H2 Bypass,Bypasses windows 10
+Windows 11 Bypass,powershell_inline,"iwr -useb ""https://pastebin.com/raw/HjRq9PAX"" | iex",,Remove Windows 11 24H2 Bypass,Un-Bypasses windows 11
+SMB Fix,powershell_inline,"iwr -useb ""https://pastebin.com/raw/zPKDUGe9"" | iex",,Apply SMB W11 Fix,Fixes SMB on W11
+SMB Fix,powershell_inline,"iwr -useb ""https://pastebin.com/raw/n8cwyTiP"" | iex",,Remove SMB W11 Fix,Un-Fixes SMB on W11
+Default Apps,powershell_inline,"iwr -useb ""https://pastebin.com/raw/pzh08JG2"" | iex",,Install Default Apps,Installs our default apps
+Admin Account,powershell_inline,"iwr -useb ""https://pastebin.com/raw/pnvtaabS"" | iex",,Enable,Enables the built in windows admin account
+Admin Account,powershell_inline,"iwr -useb ""https://pastebin.com/raw/maLnHU9b"" | iex",,Disable,Disables the built in windowsadmin  account
+Windows Tools,powershell_inline,"iwr -useb ""https://pastebin.com/raw/1mdJgwsA"" | iex",,Windows Registry Key,Gets the windows key from the registry
+Windows Tools,powershell_inline,"irm ""https://get.activated.win"" | iex",,Windows & Office Tools,Windows and Office Activation and versioning tools
