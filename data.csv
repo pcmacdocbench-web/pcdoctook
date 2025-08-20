@@ -1,12 +1,13 @@
 Section,Method,Command,Arguments,Name,Description
-Windows 11 Bypass,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/BypassW11"" | iex",,Apply Windows 11 24H2 Bypass,Bypasses windows 10
-Windows 11 Bypass,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/UnBypassW11"" | iex",,Remove Windows 11 24H2 Bypass,Un-Bypasses windows 11
-SMB Fix,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/ApplySmbFix"" | iex",,Apply SMB W11 Fix,Fixes SMB on W11
-SMB Fix,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/RemoveSmbFix"" | iex",,Remove SMB W11 Fix,Un-Fixes SMB on W11
+Windows 11 Bypass,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/BypassW11"" | iex",,Apply Windows 11 24H2 Bypass,Bypasses Windows 11
+Windows 11 Bypass,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/UnBypassW11"" | iex",,Remove Windows 11 24H2 Bypass,Un-Bypasses Windows 11
+SMB Fix,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/ApplySmbFix"" | iex",,Apply SMB W11 Fix,Fixes SMB on Windows 11
+SMB Fix,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/RemoveSmbFix"" | iex",,Remove SMB W11 Fix,Un-Fixes SMB on Windows 11
 Apps,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/InstallDefaultApps"" | iex",,Install Default Apps,Installs our default apps
 Admin Account,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/EnableAdminAccount"" | iex",,Enable,Enables the built in windows admin account
-Admin Account,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/DisableAdminAccount"" | iex",,Disable,Disables the built in windowsadmin  account
+Admin Account,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/DisableAdminAccount"" | iex",,Disable,Disables the built in windows admin  account
 Windows Tools,powershell_inline,"iwr -useb ""https://raw.githubusercontent.com/pcmacdocbench-web/pcdoctool/refs/heads/main/GetWindowsKeyFromRegistry"" | iex",,Windows Registry Key,Gets the windows key from the registry
 Windows Tools,powershell_inline,"irm ""https://get.activated.win"" | iex",,Windows & Office Tools,Windows and Office Activation and versioning tools
+
 
 
