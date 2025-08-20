@@ -1,0 +1,31 @@
+$softwareList = @(
+    "SUPERAntiSpyware.SUPERAntiSpyware",
+    "Malwarebytes.Malwarebytes"
+)
+
+$logFile = "C:\Windows\Temp\InstallLogAppsAV.txt"
+
+function Write-Log($msg, $level) {
+    $timestamp = (Get-Date).ToString("yyyy-MM-dd HH:mm:ss")
+    $logMessage = "[$timestamp] [$level] $msg"
+    Add-Content -Path $logFile -Value $logMessage
+}
+
+function Write-Info($msg) { Write-Log $msg "INFO" }
+function Write-Success($msg) { Write-Log $msg "OK" }
+function Write-Warn($msg) { Write-Log $msg "WARN" }
+function Write-ErrorMsg($msg) { Write-Log $msg "ERROR" }
+
+foreach ($software in $softwareList) {
+    try {
+        Write-Info "Installing $software..."
+        winget install -e --id $software --silent --accept-package-agreements --accept-source-agreements
+        Write-Success "$software installed successfully"
+    }
+    catch {
+        Write-ErrorMsg "Failed to install $software"
+        Write-ErrorMsg "Error: $_"
+    }
+}
+
+Write-Success "All installations completed"
