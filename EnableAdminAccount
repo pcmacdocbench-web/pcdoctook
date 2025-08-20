@@ -1,0 +1,2 @@
+net user /active:yes Administrator
+exit
