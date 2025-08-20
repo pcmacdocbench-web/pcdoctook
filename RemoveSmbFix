@@ -1,0 +1,3 @@
+Set-SmbClientConfiguration -RequireSecuritySignature $true -Force
+Set-SmbClientConfiguration -EnableInsecureGuestLogons $false -Force
+exit
