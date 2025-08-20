@@ -1,0 +1,40 @@
+$productKey = (Get-WmiObject -Query 'select * from SoftwareLicensingService').OA3xOriginalProductKey
+
+Add-Type -AssemblyName System.Windows.Forms
+$form = New-Object System.Windows.Forms.Form
+$form.Text = "Windows Product Key"
+$form.Width = 400
+$form.Height = 200
+$form.StartPosition = "CenterScreen"
+
+$textBox = New-Object System.Windows.Forms.TextBox
+$textBox.Multiline = $true
+$textBox.Width = 360
+$textBox.Height = 80
+$textBox.ReadOnly = $true
+$textBox.Text = $productKey
+$textBox.Location = New-Object System.Drawing.Point(10,10)
+
+$btnCopy = New-Object System.Windows.Forms.Button
+$btnCopy.Text = "Copy to Clipboard"
+$btnCopy.Width = 120
+$btnCopy.Location = New-Object System.Drawing.Point(10,100)
+$btnCopy.Add_Click({
+    [System.Windows.Forms.Clipboard]::SetText($productKey)
+    $btnCopy.Text = "Copied!"
+})
+
+$btnClose = New-Object System.Windows.Forms.Button
+$btnClose.Text = "Close"
+$btnClose.Width = 120
+$btnClose.Location = New-Object System.Drawing.Point(250,100)
+$btnClose.Add_Click({
+    $form.Close()
+})
+
+$form.Controls.Add($textBox)
+$form.Controls.Add($btnCopy)
+$form.Controls.Add($btnClose)
+
+$form.ShowDialog()
+exit
